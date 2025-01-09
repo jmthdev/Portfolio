@@ -8,25 +8,25 @@
 }
 
 body {
-    background-color: #121212; /* Tumman harmaa/musta tausta */
-    color: #FFFFFF; /* Valkoinen teksti */
+    background-color: #121212; 
+    color: #FFFFFF; 
     display: flex;
     flex-direction: column;
     min-height: 100vh;
 }
 
 header {
-    background-color: #1E1E1E; /* Tumman harmaa tausta */
-    color: #1ABC9C; /* Teal-värinen otsikko */
+    background-color: #1E1E1E; 
+    color: #1ABC9C; 
     padding: 20px 0;
     text-align: center;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Tekstivarjo */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); 
 }
 
 nav {
     display: flex;
     justify-content: center;
-    background-color: #1E1E1E; /* Tumman harmaa tausta */
+    background-color: #1E1E1E; 
     padding: 10px;
     position: sticky;
     top: 0;
@@ -34,25 +34,24 @@ nav {
 }
 
 nav a {
-    color: #FFFFFF; /* Valkoinen linkkiteksti */
+    color: #FFFFFF; 
     padding: 14px 16px;
     text-align: center;
     text-decoration: none;
     position: relative;
     margin: 0 10px;
-    border-radius: 15px; /* Pyöristys normaalitilassa */
+    border-radius: 15px; 
     transition: background-color 0.3s, color 0.3s, border-radius 0.3s;
 }
 
 nav a:hover {
-    background-color: #1ABC9C; /* Teal-värinen hover-efekti */
-    color: #000000; /* Musta teksti hover-efektissä */
-    border-radius: 50px; /* Suurempi pyöristys hover-tilassa */
+    background-color: #1ABC9C; 
+    color: #000000; 
+    border-radius: 50px; 
 }
-
 .click-effect {
     position: absolute;
-    background-color: #1ABC9C; /* Teal-värinen pallo */
+    background-color: #1ABC9C; 
     border-radius: 50%;
     transform: scale(0);
     animation: ripple 0.6s linear;
@@ -75,20 +74,20 @@ section {
 }
 
 #home h1 {
-    font-size: 5rem; /* Suurempi fonttikoko */
+    font-size: 5rem; 
     font-weight: 700;
     line-height: 1.2;
     margin-bottom: 10px;
 }
 
 #home .name {
-    color: #1ABC9C; /* Haalean vihreä väri */
+    color: #1ABC9C; 
 }
 
 #home .description {
-    font-size: 2rem; /* Pienempi fonttikoko */
+    font-size: 2rem; 
     font-weight: 300;
-    color: #FFFFFF; /* Valkoinen teksti */
+    color: #FFFFFF; 
 }
 
 #skills ul {
@@ -103,25 +102,24 @@ section {
 }
 
 #skills ul li::before {
-    content: '•'; /* Pallo symboli */
-    color: #1ABC9C; /* Haalean vihreä väri */
+    content: '•'; 
+    color: #1ABC9C; 
     font-size: 1.5rem;
     margin-right: 10px;
 }
 
 #skills ul li a {
-    color: #1ABC9C; /* Teal-värinen linkki */
+    color: #1ABC9C; 
     text-decoration: none;
     font-weight: bold;
 }
 
 #skills ul li a:hover {
-    color: #FFFFFF; /* Valkoinen hover-väri */
+    color: #FFFFFF; 
 }
 
 
 
-/* Nav-tyylit (aiemmat säilyvät) */
 nav {
     display: flex;
     justify-content: center;
@@ -165,7 +163,7 @@ nav a:hover {
     background-color: #f0f0f0;
 }
 
-/* Slide-bottom animaatio */
+
 @keyframes slideBottom {
     from {
         opacity: 0;
@@ -177,7 +175,6 @@ nav a:hover {
     }
 }
 
-/* Skills-lista tyylit */
 #skills ul {
     list-style: none;
     padding: 0;
@@ -240,23 +237,23 @@ nav a:hover {
     background-color: #e0e0e0;
 }
 
-/* Yleinen Boxicon-koko */
+
 .icon-container .icon {
-    font-size: 48px; /* Suurempi kuvake */
-    margin: 10px;    /* Vähän tilaa kuvakkeiden ympärille */
-    color: #333;     /* Kuvakkeen väri */
-    transition: color 0.3s ease; /* Hover-efekti */
+    font-size: 48px; 
+    margin: 10px;    
+    color: #333;     
+    transition: color 0.3s ease; 
 }
 
-/* Hover-efekti kuvakkeille */
+
 .icon-container .icon:hover {
-    color: #0078d7; /* Vaihda väriä hoveroitaessa */
+    color: #0078d7; 
 }
 
-/* Kuvakkeiden asettelu */
+
 .icon-container {
     display: flex;
     justify-content: center;
-    gap: 20px; /* Kuvakkeiden väli */
+    gap: 20px; 
     margin-top: 20px;
 }
