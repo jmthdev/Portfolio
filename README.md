@@ -19,3 +19,6 @@ Tämä on henkilökohtainen portfolio-sivusto, jossa esittelen taitojani, projek
    ```bash
    git clone https://github.com/jonz-dsgn/portfolio.git
    ```
+## Portfolio
+
+- **Verkkokauppa**: https://jmthdev.github.io/Portfolio/react-verkkokauppa/
