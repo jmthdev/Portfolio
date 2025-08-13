@@ -13,12 +13,7 @@ Tämä on henkilökohtainen portfolio-sivusto, jossa esittelen taitojani, projek
 - **Blogi**: Julkaisuja ja pohdintoja
 - **Yhteystiedot**: Yhteydenottolomake
 
-## Asennus
 
-1. Lataa tai kloonaa tämä projekti:
-   ```bash
-   git clone https://github.com/jonz-dsgn/portfolio.git
-   ```
 ## Portfolio
 
 - **Verkkokauppa**: https://jmthdev.github.io/Portfolio/react-verkkokauppa/
