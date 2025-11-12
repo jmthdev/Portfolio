@@ -120,42 +120,57 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   const sections = document.querySelectorAll("section");
-const navLinks = document.querySelectorAll(".scroll-link");
+  const navLinks = document.querySelectorAll(".scroll-link");
+  const backToTopBtn = document.getElementById('back-to-top');
 
-window.addEventListener("scroll", () => {
-  let current = "";
+  let scrollTicking = false;
 
-  sections.forEach((section) => {
-    const sectionTop = section.offsetTop - 80;
-    if (pageYOffset >= sectionTop) {
-      current = section.getAttribute("id");
+  // Optimized scroll handler with requestAnimationFrame
+  function handleScroll() {
+    const scrollPos = window.pageYOffset;
+
+    // Update back to top button
+    if (scrollPos > 300) {
+      backToTopBtn.classList.add('show');
+    } else {
+      backToTopBtn.classList.remove('show');
     }
-  });
 
-  navLinks.forEach((link) => {
-    link.classList.remove("active");
-    if (link.getAttribute("href") === `#${current}`) {
-      link.classList.add("active");
-    }
-  });
-});
-document.querySelectorAll('.feature-card').forEach(card => {
-  revealObserver.observe(card);
-});
+    // Update active navigation link
+    let current = "";
+    sections.forEach((section) => {
+      const sectionTop = section.offsetTop - 80;
+      if (scrollPos >= sectionTop) {
+        current = section.getAttribute("id");
+      }
+    });
 
-// === Back to Top Button ===
-const backToTopBtn = document.getElementById('back-to-top');
+    navLinks.forEach((link) => {
+      const href = link.getAttribute("href");
+      if (href === `#${current}`) {
+        if (!link.classList.contains("active")) {
+          link.classList.add("active");
+        }
+      } else {
+        link.classList.remove("active");
+      }
+    });
 
-// Show/hide button based on scroll position
-window.addEventListener('scroll', () => {
-  if (window.pageYOffset > 300) {
-    backToTopBtn.classList.add('show');
-  } else {
-    backToTopBtn.classList.remove('show');
+    scrollTicking = false;
   }
-});
 
-// Scroll to top when button is clicked
+  window.addEventListener("scroll", () => {
+    if (!scrollTicking) {
+      window.requestAnimationFrame(handleScroll);
+      scrollTicking = true;
+    }
+  }, { passive: true });
+
+  document.querySelectorAll('.feature-card').forEach(card => {
+    revealObserver.observe(card);
+  });
+
+// === Back to Top Button Click Handler ===
 backToTopBtn.addEventListener('click', () => {
   window.scrollTo({
     top: 0,

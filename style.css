@@ -476,6 +476,8 @@ body.dark .skill-tag:hover {
   transform: translateX(-40px);
   animation: fadeInLeft 1s ease-out forwards;
   transition: border 0.5s, background 0.3s ease;
+  will-change: transform, opacity;
+  backface-visibility: hidden;
 }
 
 body.dark .feature-card {
@@ -791,6 +793,8 @@ body.dark .footer {
   transform: translateY(30px);
   animation: fadeInSlide 1.5s ease-out forwards;
   animation-delay: 0.3s;
+  will-change: transform, opacity;
+  backface-visibility: hidden;
 }
 
 @keyframes fadeInSlide {
