@@ -18,6 +18,12 @@ function toggleTheme() {
   }
 }
 
+// === Coming Soon alert ===
+function showComingSoon(event) {
+  event.preventDefault();
+  alert("COMING SOON");
+}
+
 document.addEventListener("DOMContentLoaded", function () {
   // === Load saved theme ===
   const savedTheme = localStorage.getItem("theme");
