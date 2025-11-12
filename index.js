@@ -44,6 +44,13 @@ document.addEventListener("DOMContentLoaded", function () {
     const words = textContent.split(' ');
     backgroundText.innerHTML = words.map(word => `<span>${word}</span>`).join(' ');
   }
+
+  const backgroundTextBottom = document.querySelector('.background-text-bottom');
+  if (backgroundTextBottom) {
+    const textContent = backgroundTextBottom.textContent;
+    const words = textContent.split(' ');
+    backgroundTextBottom.innerHTML = words.map(word => `<span>${word}</span>`).join(' ');
+  }
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {

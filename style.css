@@ -314,6 +314,34 @@ body.dark .background-text {
   text-shadow: none;
 }
 
+.background-text-bottom {
+  position: absolute;
+  bottom: 1rem;
+  left: 1rem;
+  right: 1rem;
+  font-size: 1.6em;
+  font-weight: bold;
+  color: rgba(200, 200, 200, 0.3);
+  z-index: 0;
+  pointer-events: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 0.3rem;
+  line-height: 1.2;
+  text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.2);
+}
+
+.background-text-bottom span {
+  white-space: nowrap;
+}
+
+body.dark .background-text-bottom {
+  color: rgba(255, 255, 255, 0.15);
+  text-shadow: none;
+}
+
 .hero-button {
   display: inline-flex;
   align-items: center;
