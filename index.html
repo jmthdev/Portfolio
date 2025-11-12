@@ -266,11 +266,17 @@
           }
         });
       }, { threshold: 0.1 });
-  
+
       document.querySelectorAll('.fade-in-left').forEach(el => {
         observer.observe(el);
       });
     });
   </script>
+
+  <!-- Back to Top Button -->
+  <button id="back-to-top" class="back-to-top" aria-label="Back to top">
+    <i class="fas fa-arrow-up"></i>
+  </button>
+
 </body>
 </html>
