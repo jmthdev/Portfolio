@@ -36,6 +36,14 @@ document.addEventListener("DOMContentLoaded", function () {
     icon.className = "fas fa-sun";
     text.textContent = "Light";
   }
+
+  // === Split background text into words for proper distribution ===
+  const backgroundText = document.querySelector('.background-text');
+  if (backgroundText) {
+    const textContent = backgroundText.textContent;
+    const words = textContent.split(' ');
+    backgroundText.innerHTML = words.map(word => `<span>${word}</span>`).join(' ');
+  }
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
