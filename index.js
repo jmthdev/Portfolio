@@ -162,4 +162,93 @@ backToTopBtn.addEventListener('click', () => {
     behavior: 'smooth'
   });
 });
+
+// === Service Modal ===
+const modal = document.getElementById('service-modal');
+const modalTitle = document.getElementById('modal-title');
+const modalBody = document.getElementById('modal-body');
+const modalClose = document.querySelector('.modal-close');
+
+const serviceDetails = {
+  fullstack: {
+    title: 'Full-Stack Development: From Concept to Deployment',
+    content: `
+      <p>I offer end-to-end development of modern web applications, ensuring a seamless user experience (UX) and robust server-side architecture. Utilizing JavaScript/TypeScript, React, and Node.js, I handle the entire lifecycle, from database design to frontend implementation.</p>
+      <h4>What I Offer:</h4>
+      <ul>
+        <li>Complete application architecture design</li>
+        <li>Frontend development with React and modern frameworks</li>
+        <li>Backend API development with Node.js and Express</li>
+        <li>Database design and integration (SQL/NoSQL)</li>
+        <li>Deployment and DevOps setup</li>
+        <li>Testing and quality assurance</li>
+      </ul>
+    `
+  },
+  uiux: {
+    title: 'Accessible & User-Friendly UI/UX Implementation',
+    content: `
+      <p>Specializing in creating highly interactive and responsive user interfaces with React. My focus is on accessibility (A11y), performance optimization, and implementing designs that prioritize the user experience.</p>
+      <h4>What I Offer:</h4>
+      <ul>
+        <li>Responsive and mobile-first design implementation</li>
+        <li>Accessibility (WCAG) compliant interfaces</li>
+        <li>Performance optimization for fast load times</li>
+        <li>Component-based architecture with React</li>
+        <li>Interactive animations and smooth transitions</li>
+        <li>Cross-browser compatibility testing</li>
+      </ul>
+    `
+  },
+  backend: {
+    title: 'Robust Backend and Scalable API Design',
+    content: `
+      <p>Designing and developing reliable, high-performance backends using Node.js and TypeScript. Services include RESTful/GraphQL API development, secure data handling, and integrating with SQL/NoSQL databases to support scalability.</p>
+      <h4>What I Offer:</h4>
+      <ul>
+        <li>RESTful and GraphQL API development</li>
+        <li>Database architecture and optimization</li>
+        <li>Authentication and authorization systems</li>
+        <li>Microservices architecture</li>
+        <li>API documentation and versioning</li>
+        <li>Performance monitoring and scaling strategies</li>
+      </ul>
+    `
+  }
+};
+
+// Open modal when service card is clicked
+document.querySelectorAll('.service-card-clickable').forEach(card => {
+  card.addEventListener('click', () => {
+    const serviceType = card.getAttribute('data-service');
+    const service = serviceDetails[serviceType];
+
+    modalTitle.textContent = service.title;
+    modalBody.innerHTML = service.content;
+    modal.classList.add('show');
+    document.body.style.overflow = 'hidden';
+  });
+});
+
+// Close modal when X is clicked
+modalClose.addEventListener('click', () => {
+  modal.classList.remove('show');
+  document.body.style.overflow = 'auto';
+});
+
+// Close modal when clicking outside
+modal.addEventListener('click', (e) => {
+  if (e.target === modal) {
+    modal.classList.remove('show');
+    document.body.style.overflow = 'auto';
+  }
+});
+
+// Close modal with Escape key
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape' && modal.classList.contains('show')) {
+    modal.classList.remove('show');
+    document.body.style.overflow = 'auto';
+  }
+});
 });
