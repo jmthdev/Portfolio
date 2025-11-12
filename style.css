@@ -831,32 +831,38 @@ body.dark .footer {
     align-items: center;
     justify-content: center;
     border-radius: 20px;
-    background: rgba(0, 123, 255, 0.1);
+    background: rgba(0, 123, 255, 0.8);
     font-size: 14px;
     padding: 0 12px;
     color: #fff;
+    box-shadow: 0 2px 8px rgba(0, 123, 255, 0.3);
   }
 
   body.dark .left-sidebar a {
-    background: rgba(255, 1, 153, 0.1);
+    background: rgba(255, 1, 153, 0.8);
+    box-shadow: 0 2px 8px rgba(255, 1, 153, 0.3);
   }
 
   .left-sidebar a::first-letter {
     font-size: 18px;
     font-weight: bold;
-    color: #007bff;
+    color: #fff;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
   }
 
   body.dark .left-sidebar a::first-letter {
-    color: #ff0199;
+    color: #fff;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
   }
 
   .left-sidebar a.active {
-    background: rgba(0, 123, 255, 0.2);
+    background: #007bff;
+    box-shadow: 0 4px 12px rgba(0, 123, 255, 0.5);
   }
 
   body.dark .left-sidebar a.active {
-    background: rgba(255, 1, 153, 0.2);
+    background: #ff0199;
+    box-shadow: 0 4px 12px rgba(255, 1, 153, 0.5);
   }
 
   .content-section,
