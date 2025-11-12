@@ -791,10 +791,14 @@ body.dark .footer {
 .fade-slide {
   opacity: 0;
   transform: translateY(30px);
-  animation: fadeInSlide 1.5s ease-out forwards;
-  animation-delay: 0.3s;
   will-change: transform, opacity;
   backface-visibility: hidden;
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.fade-slide.visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 @keyframes fadeInSlide {
