@@ -148,40 +148,36 @@ body.dark .left-sidebar a.active {
 #toggle-theme {
   margin-top: auto;
   margin-bottom: 20px;
-  background: #007bff;
-  color: #fff;
-  border: 2px solid #007bff;
-  padding: 12px 30px;
+  background: transparent;
+  color: #007bff;
+  border: none;
+  padding: 8px 12px;
   font-weight: 600;
-  border-radius: 45px;
+  border-radius: 6px;
   cursor: pointer;
-  box-shadow: 0 0 20px rgba(0, 123, 255, 0.3);
-  transition: all 0.5s;
+  transition: all 0.3s;
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 6px;
   justify-content: center;
-  width: 140px;
+  font-size: 14px;
 }
 
 body.dark #toggle-theme {
-  background: #ff0199;
-  border: 2px solid #ff0199;
-  box-shadow: 0 0 20px rgba(255, 1, 153, 0.3);
+  color: #ff0199;
 }
 
 #toggle-theme i {
-  font-size: 18px;
+  font-size: 16px;
 }
 
 #toggle-theme:hover {
-  background: transparent;
-  color: #007bff;
+  background: rgba(0, 123, 255, 0.1);
   transform: scale(1.05);
 }
 
 body.dark #toggle-theme:hover {
-  color: #ff0199;
+  background: rgba(255, 1, 153, 0.1);
 }
 
 .social-links-icons {
