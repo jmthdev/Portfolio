@@ -291,22 +291,23 @@ body.dark .hero-container {
   inset: 0;
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  font-size: 4em;
+  font-size: 2.5em;
   font-weight: bold;
-  color: rgba(0, 0, 0, 0.05);
+  color: rgba(0, 0, 0, 0.06);
   z-index: -1;
   pointer-events: none;
   text-align: justify;
-  line-height: 1.2;
+  text-align-last: justify;
+  line-height: 1.5;
   text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.5);
-  padding: 1rem;
-  word-spacing: 2em;
-  letter-spacing: 0.05em;
+  padding: 3rem 2rem;
+  word-spacing: 0.5em;
+  letter-spacing: 0.02em;
+  overflow: hidden;
 }
 
 body.dark .background-text {
-  color: rgba(255, 1, 153, 0.15);
+  color: rgba(255, 1, 153, 0.18);
   text-shadow: none;
 }
 
