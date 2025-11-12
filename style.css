@@ -43,11 +43,6 @@ body.dark .left-sidebar {
   border-right: 2px solid rgba(255, 255, 255, 0.15);
 }
 
-.left-sidebar a.active {
-  color: #ff0199;
-  font-weight: bold;
-}
-
 .left-sidebar img {
   max-width: 100%;
   width: 150px;
@@ -134,25 +129,33 @@ body.dark .left-sidebar a {
 }
 
 .left-sidebar a:hover {
+  color: #007bff;
+}
+
+body.dark .left-sidebar a:hover {
   color: #ff0199;
 }
 
 .left-sidebar a.active {
-  color: #ff0199;
+  color: #007bff;
   font-weight: bold;
+}
+
+body.dark .left-sidebar a.active {
+  color: #ff0199;
 }
 
 #toggle-theme {
   margin-top: auto;
   margin-bottom: 20px;
-  background: #ff0199;
+  background: #007bff;
   color: #fff;
-  border: 2px solid #ff0199;
+  border: 2px solid #007bff;
   padding: 12px 30px;
   font-weight: 600;
   border-radius: 45px;
   cursor: pointer;
-  box-shadow: 0 0 20px rgba(255, 1, 153, 0.3);
+  box-shadow: 0 0 20px rgba(0, 123, 255, 0.3);
   transition: all 0.5s;
   display: flex;
   align-items: center;
@@ -161,14 +164,24 @@ body.dark .left-sidebar a {
   width: 140px;
 }
 
+body.dark #toggle-theme {
+  background: #ff0199;
+  border: 2px solid #ff0199;
+  box-shadow: 0 0 20px rgba(255, 1, 153, 0.3);
+}
+
 #toggle-theme i {
   font-size: 18px;
 }
 
 #toggle-theme:hover {
   background: transparent;
-  color: #ff0199;
+  color: #007bff;
   transform: scale(1.05);
+}
+
+body.dark #toggle-theme:hover {
+  color: #ff0199;
 }
 
 .social-links-icons {
@@ -280,8 +293,8 @@ body.dark .hero-container {
   align-items: center;
   gap: 0.5rem;
   padding: 12px 30px;
-  border: 2px solid #ff0199;
-  background: #ff0199;
+  border: 2px solid #007bff;
+  background: #007bff;
   font-weight: 500;
   font-size: 1rem;
   text-decoration: none;
@@ -292,8 +305,17 @@ body.dark .hero-container {
   letter-spacing: 0.05em;
 }
 
+body.dark .hero-button {
+  border: 2px solid #ff0199;
+  background: #ff0199;
+}
+
 .hero-button:hover {
   background: transparent;
+  color: #007bff;
+}
+
+body.dark .hero-button:hover {
   color: #ff0199;
 }
 
@@ -373,7 +395,7 @@ body.dark .feature-card {
 }
 
 .feature-card:hover {
-  border: 2px solid rgba(255, 255, 255, 0.3);
+  border: 2px solid rgba(0, 123, 255, 0.5);
 }
 
 body.dark .feature-card:hover {
@@ -383,6 +405,10 @@ body.dark .feature-card:hover {
 .feature-card .icon {
   font-size: 2rem;
   margin-bottom: 0.8rem;
+  color: #007bff;
+}
+
+body.dark .feature-card .icon {
   color: #ff0199;
 }
 
@@ -435,7 +461,7 @@ body.dark .service-card {
 }
 
 .service-card:hover {
-  border: 2px solid rgba(255, 1, 153, 0.3);
+  border: 2px solid rgba(0, 123, 255, 0.5);
 }
 
 body.dark .service-card:hover {
@@ -443,8 +469,12 @@ body.dark .service-card:hover {
 }
 
 .service-card h3 {
-  color: #ff0199;
+  color: #007bff;
   font-weight: 500;
+}
+
+body.dark .service-card h3 {
+  color: #ff0199;
 }
 
 .service-card p {
@@ -582,7 +612,7 @@ body.dark .accordion-content {
   justify-content: center;
   border-radius: 8px;
   font-size: 24px;
-  color: #ff0199;
+  color: #007bff;
   border: 2px solid rgba(0, 0, 0, 0.1);
   transition: background 0.3s ease;
 }
@@ -590,6 +620,7 @@ body.dark .accordion-content {
 body.dark .icon-box {
   background: #000028;
   border: 2px solid rgba(255, 255, 255, 0.2);
+  color: #ff0199;
 }
 
 .contact-form input,
@@ -612,26 +643,41 @@ body.dark .contact-form textarea {
 .contact-form input:focus,
 .contact-form textarea:focus {
   outline: none;
+  border: 2px solid #007bff;
+}
+
+body.dark .contact-form input:focus,
+body.dark .contact-form textarea:focus {
   border: 2px solid #ff0199;
 }
 
 .button-metal {
-  background: #ff0199;
+  background: #007bff;
   color: #fff;
   font-weight: 500;
-  border: 2px solid #ff0199;
+  border: 2px solid #007bff;
   border-radius: 45px;
   padding: 12px 30px;
   font-size: 1rem;
   letter-spacing: 0.05em;
-  box-shadow: 0 0 20px rgba(255, 1, 153, 0.3);
+  box-shadow: 0 0 20px rgba(0, 123, 255, 0.3);
   transition: all 0.5s;
   text-align: center;
   cursor: pointer;
 }
 
+body.dark .button-metal {
+  background: #ff0199;
+  border: 2px solid #ff0199;
+  box-shadow: 0 0 20px rgba(255, 1, 153, 0.3);
+}
+
 .button-metal:hover {
   background: transparent;
+  color: #007bff;
+}
+
+body.dark .button-metal:hover {
   color: #ff0199;
 }
 
