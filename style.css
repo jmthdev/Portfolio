@@ -291,27 +291,18 @@ body.dark .hero-container {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  font-size: 3em;
+  font-size: 2em;
   font-weight: bold;
-  color: rgba(0, 123, 255, 0.08);
-  white-space: nowrap;
+  color: rgba(0, 123, 255, 0.2);
   z-index: -1;
   pointer-events: none;
-  animation: slideText 15s linear infinite;
-  width: max-content;
+  max-width: 80%;
+  text-align: center;
+  line-height: 1.4;
 }
 
 body.dark .background-text {
-  color: rgba(255, 1, 153, 0.1);
-}
-
-@keyframes slideText {
-  0% {
-    transform: translate(-50%, -50%) translateX(100%);
-  }
-  100% {
-    transform: translate(-50%, -50%) translateX(-100%);
-  }
+  color: rgba(255, 1, 153, 0.25);
 }
 
 .hero-button {
