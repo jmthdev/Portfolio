@@ -52,23 +52,23 @@ body.dark {
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
 }
 
-/* Placeholder effect when image fails to load */
-.left-sidebar img[alt]:not([src*=".jpg"]):not([src*=".png"]):not([src*=".jpeg"]),
-.left-sidebar img:not([src]) {
+/* Profile image placeholder wrapper */
+.profile-placeholder {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #555, #777);
+  border: 3px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(135deg, #555, #777);
-  position: relative;
+  margin-bottom: 1rem;
 }
 
-.left-sidebar img[alt]:not([src*=".jpg"]):not([src*=".png"]):not([src*=".jpeg"])::before,
-.left-sidebar img:not([src])::before {
-  content: attr(alt);
-  font-size: 48px;
-  color: rgba(255, 255, 255, 0.5);
-  font-weight: bold;
-  text-transform: uppercase;
+.profile-placeholder i {
+  font-size: 64px;
+  color: rgba(255, 255, 255, 0.4);
 }
 
 .left-sidebar h1 {
