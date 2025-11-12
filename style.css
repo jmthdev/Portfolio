@@ -758,7 +758,6 @@ body.dark .footer {
   }
 
   .left-sidebar a {
-    font-size: 0;
     width: 40px;
     height: 40px;
     display: flex;
@@ -766,19 +765,22 @@ body.dark .footer {
     justify-content: center;
     border-radius: 50%;
     background: rgba(0, 123, 255, 0.1);
+    font-size: 0;
+    position: relative;
   }
 
   body.dark .left-sidebar a {
     background: rgba(255, 1, 153, 0.1);
   }
 
-  .left-sidebar a::first-letter {
+  .left-sidebar a::before {
+    content: attr(data-letter);
     font-size: 20px;
     font-weight: bold;
     color: #007bff;
   }
 
-  body.dark .left-sidebar a::first-letter {
+  body.dark .left-sidebar a::before {
     color: #ff0199;
   }
 
