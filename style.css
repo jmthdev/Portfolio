@@ -757,29 +757,29 @@ body.dark .footer {
   }
 
   .left-sidebar a {
-    width: 40px;
+    min-width: 60px;
     height: 40px;
     display: flex;
     align-items: center;
     justify-content: center;
-    border-radius: 50%;
+    border-radius: 20px;
     background: rgba(0, 123, 255, 0.1);
-    font-size: 0;
-    position: relative;
+    font-size: 14px;
+    padding: 0 12px;
+    color: #fff;
   }
 
   body.dark .left-sidebar a {
     background: rgba(255, 1, 153, 0.1);
   }
 
-  .left-sidebar a::before {
-    content: attr(data-letter);
-    font-size: 20px;
+  .left-sidebar a::first-letter {
+    font-size: 18px;
     font-weight: bold;
     color: #007bff;
   }
 
-  body.dark .left-sidebar a::before {
+  body.dark .left-sidebar a::first-letter {
     color: #ff0199;
   }
 
