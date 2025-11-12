@@ -42,8 +42,33 @@ body.dark {
 
 .left-sidebar img {
   max-width: 100%;
-  height: auto;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
   margin-bottom: 1rem;
+  background: linear-gradient(135deg, #444, #666);
+  border: 3px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Placeholder effect when image fails to load */
+.left-sidebar img[alt]:not([src*=".jpg"]):not([src*=".png"]):not([src*=".jpeg"]),
+.left-sidebar img:not([src]) {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #555, #777);
+  position: relative;
+}
+
+.left-sidebar img[alt]:not([src*=".jpg"]):not([src*=".png"]):not([src*=".jpeg"])::before,
+.left-sidebar img:not([src])::before {
+  content: attr(alt);
+  font-size: 48px;
+  color: rgba(255, 255, 255, 0.5);
+  font-weight: bold;
+  text-transform: uppercase;
 }
 
 .left-sidebar h1 {
