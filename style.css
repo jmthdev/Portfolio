@@ -834,13 +834,25 @@ body.dark .footer {
     background: rgba(0, 123, 255, 0.15);
     font-size: 14px;
     padding: 0 12px;
-    color: #1a1a1a;
+    color: #000;
     font-weight: 600;
+    transition: all 0.3s ease;
   }
 
   body.dark .left-sidebar a {
     background: rgba(255, 1, 153, 0.15);
     color: #fff;
+  }
+
+  .left-sidebar a:hover {
+    background: rgba(0, 123, 255, 0.3);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 123, 255, 0.3);
+  }
+
+  body.dark .left-sidebar a:hover {
+    background: rgba(255, 1, 153, 0.3);
+    box-shadow: 0 4px 8px rgba(255, 1, 153, 0.3);
   }
 
   .left-sidebar a::first-letter {
