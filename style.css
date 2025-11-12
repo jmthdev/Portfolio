@@ -6,7 +6,7 @@
 
 body {
   font-family: 'Open Sans', sans-serif;
-  background-color: #00003b;
+  background: linear-gradient(to right, #000028, #00003b, #1a0052, #2d006b);
   color: #fff;
   transition: background 0.3s ease;
   scroll-behavior: smooth;
@@ -144,6 +144,11 @@ body.dark {
   margin-left: 260px;
   padding: 60px 40px;
   min-height: 100vh;
+  background: linear-gradient(to right,
+    #000028 0%,
+    #00003b 30%,
+    #0d0045 60%,
+    #1a0052 100%);
 }
 
 section {
