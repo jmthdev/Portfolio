@@ -273,7 +273,7 @@ body.dark .hero-container {
 
 .hero-swap {
   position: relative;
-  z-index: 1;
+  z-index: 2;
   opacity: 0;
   transform: translateY(20px);
   transition: opacity 1s ease, transform 1s ease;
@@ -295,7 +295,7 @@ body.dark .hero-container {
   font-size: 1.6em;
   font-weight: bold;
   color: rgba(0, 0, 0, 0.08);
-  z-index: -1;
+  z-index: 0;
   pointer-events: none;
   display: flex;
   flex-wrap: wrap;
