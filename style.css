@@ -831,25 +831,25 @@ body.dark .footer {
     align-items: center;
     justify-content: center;
     border-radius: 20px;
-    background: transparent;
+    background: rgba(0, 0, 0, 0.05);
     font-size: 14px;
     padding: 0 12px;
     color: #2c3e50;
     font-weight: 600;
-    transition: background 0.3s ease, color 0.3s ease;
+    transition: background 0.3s ease;
   }
 
   body.dark .left-sidebar a {
-    background: transparent;
+    background: rgba(255, 255, 255, 0.05);
     color: #fff;
   }
 
   .left-sidebar a:hover {
-    background: rgba(0, 123, 255, 0.15);
+    background: rgba(0, 123, 255, 0.2);
   }
 
   body.dark .left-sidebar a:hover {
-    background: rgba(255, 1, 153, 0.15);
+    background: rgba(255, 1, 153, 0.2);
   }
 
   .left-sidebar a::first-letter {
