@@ -835,16 +835,16 @@ body.dark .footer {
     align-items: center;
     justify-content: center;
     border-radius: 20px;
-    background: rgba(0, 0, 0, 0.05);
+    background: rgba(0, 123, 255, 0.1);
     font-size: 14px;
     padding: 0 12px;
-    color: #2c3e50;
+    color: #000;
     font-weight: 600;
     transition: background 0.3s ease;
   }
 
   body.dark .left-sidebar a {
-    background: rgba(255, 255, 255, 0.05);
+    background: rgba(255, 1, 153, 0.1);
     color: #fff;
   }
 
@@ -867,11 +867,11 @@ body.dark .footer {
   }
 
   .left-sidebar a.active {
-    background: rgba(0, 123, 255, 0.15);
+    background: rgba(0, 123, 255, 0.3);
   }
 
   body.dark .left-sidebar a.active {
-    background: rgba(255, 1, 153, 0.15);
+    background: rgba(255, 1, 153, 0.3);
   }
 
   .content-section,
