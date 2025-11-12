@@ -750,6 +750,44 @@ body.dark .footer {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    gap: 1rem;
+  }
+
+  .left-sidebar li {
+    margin: 0;
+  }
+
+  .left-sidebar a {
+    font-size: 0;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: rgba(0, 123, 255, 0.1);
+  }
+
+  body.dark .left-sidebar a {
+    background: rgba(255, 1, 153, 0.1);
+  }
+
+  .left-sidebar a::first-letter {
+    font-size: 20px;
+    font-weight: bold;
+    color: #007bff;
+  }
+
+  body.dark .left-sidebar a::first-letter {
+    color: #ff0199;
+  }
+
+  .left-sidebar a.active {
+    background: rgba(0, 123, 255, 0.2);
+  }
+
+  body.dark .left-sidebar a.active {
+    background: rgba(255, 1, 153, 0.2);
   }
 
   .content-section,
