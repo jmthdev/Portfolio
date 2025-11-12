@@ -1,10 +1,34 @@
-document.addEventListener("DOMContentLoaded", function () {
-  // === Theme toggle ===
+// === Theme toggle function ===
+function toggleTheme() {
+  const body = document.body;
   const themeBtn = document.getElementById("toggle-theme");
-  if (themeBtn) {
-    themeBtn.addEventListener("click", function () {
-      document.body.classList.toggle("dark");
-    });
+  const icon = themeBtn.querySelector("i");
+  const text = themeBtn.querySelector("span");
+
+  body.classList.toggle("dark");
+
+  if (body.classList.contains("dark")) {
+    icon.className = "fas fa-sun";
+    text.textContent = "Light";
+    localStorage.setItem("theme", "dark");
+  } else {
+    icon.className = "fas fa-moon";
+    text.textContent = "Dark";
+    localStorage.setItem("theme", "light");
+  }
+}
+
+document.addEventListener("DOMContentLoaded", function () {
+  // === Load saved theme ===
+  const savedTheme = localStorage.getItem("theme");
+  const themeBtn = document.getElementById("toggle-theme");
+  const icon = themeBtn.querySelector("i");
+  const text = themeBtn.querySelector("span");
+
+  if (savedTheme === "dark") {
+    document.body.classList.add("dark");
+    icon.className = "fas fa-sun";
+    text.textContent = "Light";
   }
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {

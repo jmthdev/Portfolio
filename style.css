@@ -4,16 +4,18 @@
   box-sizing: border-box;
 }
 
+/* Light Theme (Default) */
 body {
   font-family: 'Open Sans', sans-serif;
-  background: linear-gradient(to right, #000028, #00003b, #1a0052, #2d006b);
-  color: #fff;
-  transition: background 0.3s ease;
+  background-color: #f7f8fa;
+  color: #2c3e50;
+  transition: background 0.3s ease, color 0.3s ease;
   scroll-behavior: smooth;
 }
 
+/* Dark Theme */
 body.dark {
-  background-color: #000028;
+  background: linear-gradient(to right, #000028, #00003b, #1a0052, #2d006b);
   color: #fff;
 }
 
@@ -23,16 +25,22 @@ body.dark {
   top: 0;
   bottom: 0;
   left: 0;
-  background: #000028;
+  background: #f1f3f6;
   padding: 30px 20px;
   overflow-y: auto;
-  border-right: 2px solid rgba(255, 255, 255, 0.15);
+  border-right: 2px solid rgba(0, 0, 0, 0.1);
   z-index: 999;
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
   will-change: transform;
+  transition: background 0.3s ease;
+}
+
+body.dark .left-sidebar {
+  background: #000028;
+  border-right: 2px solid rgba(255, 255, 255, 0.15);
 }
 
 .left-sidebar a.active {
@@ -57,17 +65,29 @@ body.dark {
   width: 150px;
   height: 150px;
   border-radius: 50%;
-  background: linear-gradient(135deg, #555, #777);
-  border: 3px solid rgba(255, 255, 255, 0.2);
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  background: linear-gradient(135deg, #ddd, #eee);
+  border: 3px solid rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
   display: flex;
   align-items: center;
   justify-content: center;
   margin-bottom: 1rem;
+  transition: background 0.3s ease, border 0.3s ease;
+}
+
+body.dark .profile-placeholder {
+  background: linear-gradient(135deg, #555, #777);
+  border: 3px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
 }
 
 .profile-placeholder i {
   font-size: 64px;
+  color: rgba(0, 0, 0, 0.3);
+  transition: color 0.3s ease;
+}
+
+body.dark .profile-placeholder i {
   color: rgba(255, 255, 255, 0.4);
 }
 
@@ -75,11 +95,19 @@ body.dark {
   font-family: 'Playfair Display', serif;
   font-size: 24px;
   margin: 0;
+  color: #2c3e50;
+}
+
+body.dark .left-sidebar h1 {
   color: #fff;
 }
 
 .left-sidebar p {
   margin: 0.5rem 0 1rem;
+  color: #555;
+}
+
+body.dark .left-sidebar p {
   color: #fff;
 }
 
@@ -96,9 +124,13 @@ body.dark {
 
 .left-sidebar a {
   text-decoration: none;
-  color: #fff;
+  color: #333;
   font-size: 16px;
   transition: color 0.5s;
+}
+
+body.dark .left-sidebar a {
+  color: #fff;
 }
 
 .left-sidebar a:hover {
@@ -122,11 +154,21 @@ body.dark {
   cursor: pointer;
   box-shadow: 0 0 20px rgba(255, 1, 153, 0.3);
   transition: all 0.5s;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  justify-content: center;
+  width: 140px;
+}
+
+#toggle-theme i {
+  font-size: 18px;
 }
 
 #toggle-theme:hover {
   background: transparent;
   color: #ff0199;
+  transform: scale(1.05);
 }
 
 .social-links-icons {
@@ -169,6 +211,11 @@ body.dark {
   margin-left: 260px;
   padding: 60px 40px;
   min-height: 100vh;
+  background: transparent;
+  transition: background 0.3s ease;
+}
+
+body.dark .content-section {
   background: linear-gradient(to right,
     #000028 0%,
     #00003b 30%,
@@ -187,13 +234,18 @@ section {
   position: relative;
   min-height: 300px;
   overflow: hidden;
-  background: #00003b;
+  background: #f0f2f5;
   border-radius: 12px;
   padding: 3rem 2rem;
   text-align: left;
   display: flex;
   flex-direction: column;
   align-items: center;
+  transition: background 0.3s ease;
+}
+
+body.dark .hero-container {
+  background: #00003b;
 }
 
 .hero-container::before {
@@ -271,10 +323,16 @@ section {
 }
 
 .skill-bar {
-  background: #000028;
+  background: #e0e0e0;
   height: 10px;
   border-radius: 6px;
   overflow: hidden;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  transition: background 0.3s ease;
+}
+
+body.dark .skill-bar {
+  background: #000028;
   border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
@@ -292,11 +350,11 @@ section {
 }
 
 .feature-card {
-  background: #000028;
+  background: white;
   padding: 50px 20px;
   border-radius: 10px;
-  border: 2px solid rgba(255, 255, 255, 0.1);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  border: 2px solid rgba(0, 0, 0, 0.05);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
   flex: 0 0 calc(33.333% - 1.5rem);
   max-width: calc(33.333% - 1.5rem);
   min-width: 240px;
@@ -305,10 +363,20 @@ section {
   opacity: 0;
   transform: translateX(-40px);
   animation: fadeInLeft 1s ease-out forwards;
-  transition: border 0.5s;
+  transition: border 0.5s, background 0.3s ease;
+}
+
+body.dark .feature-card {
+  background: #000028;
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 }
 
 .feature-card:hover {
+  border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+body.dark .feature-card:hover {
   border: 2px solid rgba(255, 255, 255, 0.3);
 }
 
@@ -321,11 +389,19 @@ section {
 .feature-card h3 {
   margin: 0.5rem 0;
   font-size: 1.1rem;
+  color: #2c3e50;
+}
+
+body.dark .feature-card h3 {
   color: #fff;
 }
 
 .feature-card p {
   font-size: 0.95rem;
+  color: #555;
+}
+
+body.dark .feature-card p {
   color: #fff;
 }
 
@@ -334,17 +410,17 @@ section {
 
 /* === WORK / SERVICE CARDS === */
 .service-card {
-  background: #000028;
+  background: white;
   padding: 50px 20px;
   border-radius: 10px;
-  border: 2px solid rgba(255, 255, 255, 0.1);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  border: 2px solid rgba(0, 0, 0, 0.05);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
   flex: 0 0 calc(33.333% - 1.5rem);
   max-width: calc(33.333% - 1.5rem);
   min-width: 240px;
   box-sizing: border-box;
   text-align: center;
-  transition: border 0.5s;
+  transition: border 0.5s, background 0.3s ease;
   display: flex;
   flex-direction: column;
   gap: 20px;
@@ -352,7 +428,17 @@ section {
   align-items: center;
 }
 
+body.dark .service-card {
+  background: #000028;
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
 .service-card:hover {
+  border: 2px solid rgba(255, 1, 153, 0.3);
+}
+
+body.dark .service-card:hover {
   border: 2px solid rgba(255, 255, 255, 0.3);
 }
 
@@ -362,6 +448,10 @@ section {
 }
 
 .service-card p {
+  color: #555;
+}
+
+body.dark .service-card p {
   color: #fff;
 }
 
@@ -400,28 +490,43 @@ section {
 /* === EDUCATION === */
 .accordion-toggle {
   cursor: pointer;
-  background: #000028;
+  background: #007bff;
   color: white;
   padding: 1rem;
   font-weight: bold;
   border-radius: 5px;
   margin-bottom: 1rem;
-  border: 2px solid rgba(255, 255, 255, 0.1);
+  border: 2px solid #007bff;
   transition: all 0.5s;
 }
 
+body.dark .accordion-toggle {
+  background: #000028;
+  border: 2px solid rgba(255, 255, 255, 0.1);
+}
+
 .accordion-toggle:hover {
+  opacity: 0.9;
+}
+
+body.dark .accordion-toggle:hover {
   border: 2px solid rgba(255, 255, 255, 0.3);
 }
 
 .accordion-content {
   max-height: 0;
   overflow: hidden;
-  background: #000028;
+  background: #f8f9fa;
   padding: 0 1rem;
-  border-left: 3px solid rgba(255, 255, 255, 0.3);
+  border-left: 3px solid #007bff;
   border-radius: 5px;
-  transition: max-height 0.3s ease;
+  transition: max-height 0.3s ease, background 0.3s ease;
+  color: #2c3e50;
+}
+
+body.dark .accordion-content {
+  background: #000028;
+  border-left: 3px solid rgba(255, 255, 255, 0.3);
   color: #fff;
 }
 
@@ -471,24 +576,37 @@ section {
 .icon-box {
   width: 60px;
   height: 60px;
-  background: #000028;
+  background: #f1f3f6;
   display: flex;
   align-items: center;
   justify-content: center;
   border-radius: 8px;
   font-size: 24px;
   color: #ff0199;
+  border: 2px solid rgba(0, 0, 0, 0.1);
+  transition: background 0.3s ease;
+}
+
+body.dark .icon-box {
+  background: #000028;
   border: 2px solid rgba(255, 255, 255, 0.2);
 }
 
 .contact-form input,
 .contact-form textarea {
   padding: 1rem;
+  border: 2px solid #ddd;
+  background: #f1f3f6;
+  color: #2c3e50;
+  border-radius: 6px;
+  transition: border 0.5s, background 0.3s ease;
+}
+
+body.dark .contact-form input,
+body.dark .contact-form textarea {
   border: 2px solid #000028;
   background: #000028;
   color: #fff;
-  border-radius: 6px;
-  transition: border 0.5s;
 }
 
 .contact-form input:focus,
@@ -523,6 +641,11 @@ section {
   padding: 20px;
   text-align: center;
   font-size: 14px;
+  color: #777;
+  transition: color 0.3s ease;
+}
+
+body.dark .footer {
   color: #aaa;
 }
 
