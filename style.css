@@ -77,7 +77,7 @@ body.dark .profile-placeholder {
 }
 
 .profile-placeholder i {
-  font-size: 64px;
+  font-size: 85px;
   color: rgba(0, 0, 0, 0.3);
   transition: color 0.3s ease;
 }
