@@ -810,6 +810,10 @@ body.dark .service-card p {
 }
 
 /* === EDUCATION === */
+.accordion {
+  margin-top: 2.5rem;
+}
+
 .accordion-toggle {
   cursor: pointer;
   background: #007bff;
@@ -867,12 +871,23 @@ body.dark .accordion-content {
   margin: 0 0 0.5rem 0;
 }
 
+/* === ABOUT === */
+#about p {
+  margin-top: 2.5rem;
+}
+
+/* === BLOG === */
+#blog ul {
+  margin-top: 2.5rem;
+}
+
 /* === CONTACT === */
 .contact-container {
   display: flex;
   flex-wrap: wrap;
   gap: 2rem;
   justify-content: center;
+  margin-top: 2.5rem;
 }
 
 .contact-info {
