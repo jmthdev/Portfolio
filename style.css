@@ -601,6 +601,9 @@ body.dark .skill-category h3 {
   font-size: 0.9rem;
   font-weight: 500;
   transition: background 0.3s ease, transform 0.2s ease;
+  text-decoration: none;
+  display: inline-block;
+  cursor: pointer;
 }
 
 body.dark .skill-tag {
@@ -617,6 +620,23 @@ body.dark .skill-tag {
 body.dark .skill-tag:hover {
   background: #ff0199;
   color: #fff;
+}
+
+/* Non-clickable skill tags */
+.skill-tag-text {
+  cursor: default;
+}
+
+.skill-tag-text:hover {
+  background: #e8f4ff;
+  color: #007bff;
+  transform: translateY(0);
+}
+
+body.dark .skill-tag-text:hover {
+  background: rgba(255, 1, 153, 0.1);
+  color: #ff0199;
+  transform: translateY(0);
 }
 
 /* === SERVICES === */
