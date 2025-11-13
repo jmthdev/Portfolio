@@ -243,10 +243,10 @@ const serviceDetails = {
 
       <h4>I am building a new project</h4>
       <ul>
-        <li><strong>Code Quality & Structural Integrity:</strong> How do we ensure code quality, maintainability, and structural integrity from the first commit, utilizing tools like TypeScript, ESLint, and Prettier to enforce strict standards?</li>
-        <li><strong>Maximized Development Velocity:</strong> How can we maximize development velocity by strategically leveraging component reusability and existing libraries?</li>
-        <li><strong>Robust Testing Strategy:</strong> What is the most effective testing strategy to guarantee a seamless, high-quality user experience free of regressions, covering both Unit (Jest) and End-to-End (Cypress) testing?</li>
-        <li><strong>Cross-Project Dependency Management:</strong> How do we manage dependencies and maintain a unified codebase across a suite of growing front-end projects?</li>
+        <li>How do we ensure code quality, maintainability, and structural integrity from the first commit, utilizing tools like TypeScript, ESLint, and Prettier to enforce strict standards?</li>
+        <li>How can we maximize development velocity by strategically leveraging component reusability and existing libraries?</li>
+        <li>What is the most effective testing strategy to guarantee a seamless, high-quality user experience free of regressions, covering both Unit (Jest) and End-to-End (Cypress) testing?</li>
+        <li>How do we manage dependencies and maintain a unified codebase across a suite of growing front-end projects?</li>
       </ul>
     `
   }
