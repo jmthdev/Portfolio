@@ -459,6 +459,7 @@ body.dark .skill-tag:hover {
   gap: 1.5rem;
   flex-wrap: wrap;
   justify-content: center;
+  margin-top: 2.5rem;
 }
 
 .feature-card {
