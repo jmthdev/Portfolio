@@ -912,6 +912,18 @@ body.dark .accordion-content {
   gap: 1rem;
 }
 
+.contact-item a,
+.contact-item p {
+  color: #2c3e50;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+body.dark .contact-item a,
+body.dark .contact-item p {
+  color: #fff;
+}
+
 .icon-box {
   width: 60px;
   height: 60px;
