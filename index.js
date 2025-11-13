@@ -229,6 +229,26 @@ const serviceDetails = {
         <li>Performance monitoring and scaling strategies</li>
       </ul>
     `
+  },
+  consultant: {
+    title: 'Front-End Consultant',
+    content: `
+      <h4>I need help with my existing project</h4>
+      <ul>
+        <li>Does it take a long time to implement new features?</li>
+        <li>Do front-end developers produce a lot of bugs?</li>
+        <li>Are user interactions too slow and not user friendly?</li>
+        <li>The user interface doesn't match designs and design system?</li>
+      </ul>
+
+      <h4>I am building a new project</h4>
+      <ul>
+        <li>How to deal with dependencies across multiple front-end projects?</li>
+        <li>Don't want to waste time with reinventing the wheel and leverage existing libraries to speed up the development process?</li>
+        <li>Want to be sure that the code base is well structured from the beginning?</li>
+        <li>Want to be sure that the user interface is seamless without bugs?</li>
+      </ul>
+    `
   }
 };
 
