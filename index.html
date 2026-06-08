@@ -56,10 +56,18 @@
       <div id="hero-text-1" class="hero-swap active">
         <h1>Hi, I'm Joni</h1>
         <p>Full Stack Developer based in Tampere.</p>
-        <a href="#" class="hero-button" onclick="showComingSoon(event)">
-          <span>Download CV</span>
-          <i class="fa-solid fa-download"></i>
-        </a>
+        
+        <!-- Päivitetyt CV:n latauspainikkeet etusivulla -->
+        <div class="hero-cv-buttons" style="display: flex; gap: 15px; margin-top: 15px;">
+          <a href="./assets/Joni_Haarala_CV_FI.pdf" download="Joni_Haarala_CV_FI.pdf" class="hero-button">
+            <span>CV (Suomi)</span>
+            <i class="fa-solid fa-download"></i>
+          </a>
+          <a href="./assets/Joni_Haarala_CV_EN.pdf" download="Joni_Haarala_CV_EN.pdf" class="hero-button">
+            <span>CV (English)</span>
+            <i class="fa-solid fa-download"></i>
+          </a>
+        </div>
       </div>
       <div id="hero-text-2" class="hero-swap">
         <h1>Building scalable, secure,<br>and user-centric web applications</h1>
@@ -76,6 +84,18 @@
     <h2>About</h2>
     <h3>From Infrastructure to Code</h3>
     <p>I have a diverse background in technical infrastructure and industrial operations, which has shaped my logical approach to problem-solving. Today, I combine that get-it-done mindset with modern software development, focusing on React, Node.js, and Cloud Security.</p>
+    
+    <!-- CV:n latauspainikkeet lisätty myös esittelyn loppuun -->
+    <div class="about-cv-buttons" style="display: flex; gap: 15px; margin-top: 25px;">
+      <a href="./assets/Joni_Haarala_CV_FI.pdf" download="Joni_Haarala_CV_FI.pdf" class="hero-button">
+        <span>Lataa CV (FI)</span>
+        <i class="fa-solid fa-file-pdf"></i>
+      </a>
+      <a href="./assets/Joni_Haarala_CV_EN.pdf" download="Joni_Haarala_CV_EN.pdf" class="hero-button">
+        <span>Download CV (EN)</span>
+        <i class="fa-solid fa-file-pdf"></i>
+      </a>
+    </div>
   </section>
 
   <section id="services" class="content-section">
@@ -111,7 +131,7 @@
   <section id="education" class="content-section">
     <h2>Education</h2>
     <div class="accordion">
-      <button class="accordion-toggle">Tampereen Tredu – Web Developer (ICT), 2024–2025</button>
+      <button class="accordion-toggle">Tampereen Tredu – Web Developer (ICT), 2024–2026</button>
       <div class="accordion-content">
         <h3>Part-time Degree in Information and Communication Technology</h3>
         <ul>
