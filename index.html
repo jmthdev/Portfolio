@@ -58,8 +58,6 @@
       <div id="hero-text-1" class="hero-swap active">
         <h1>Hi, I'm Joni</h1>
         <p>Full Stack Developer based in Tampere.</p>
-        
-        <!-- Päivitetyt CV:n latauspainikkeet etusivulla -->
         <div class="hero-cv-buttons" style="display: flex; gap: 15px; margin-top: 15px;">
           <a href="./assets/Joni_Haarala_CV_FI.pdf" download="Joni_Haarala_CV_FI.pdf" class="hero-button">
             <span>CV (Suomi)</span>
@@ -87,7 +85,6 @@
     <h3>From Infrastructure to Code</h3>
     <p>I have a diverse background in technical infrastructure and industrial operations, which has shaped my logical approach to problem-solving. Today, I combine that get-it-done mindset with modern software development, focusing on React, Node.js, and Cloud Security.</p>
     
-    <!-- CV:n latauspainikkeet lisätty myös esittelyn loppuun -->
     <div class="about-cv-buttons" style="display: flex; gap: 15px; margin-top: 25px;">
       <a href="./assets/Joni_Haarala_CV_FI.pdf" download="Joni_Haarala_CV_FI.pdf" class="hero-button">
         <span>Lataa CV (FI)</span>
@@ -169,6 +166,7 @@
     <div class="tab-navigation">
       <button class="tab-button active" data-tab="skills">SKILLS</button>
       <button class="tab-button" data-tab="work-experience">EXPERIENCE</button>
+      <button class="tab-button" data-tab="certifications">CERTIFICATIONS</button>
       <button class="tab-button" data-tab="code-samples">CODE</button>
     </div>
 
@@ -178,36 +176,33 @@
           <div class="skill-category">
             <h3>Frontend</h3>
             <div class="skill-tags">
-              <a href="https://react.dev/" target="_blank" class="skill-tag">React</a>
-              <a href="https://nextjs.org/" target="_blank" class="skill-tag">Next.js</a>
-              <a href="https://www.typescriptlang.org/" target="_blank" class="skill-tag">TypeScript</a>
-              <a href="https://tailwindcss.com/" target="_blank" class="skill-tag">Tailwind CSS</a>
+              <span class="skill-tag">React</span>
+              <span class="skill-tag">Next.js</span>
+              <span class="skill-tag">TypeScript</span>
+              <span class="skill-tag">Tailwind CSS</span>
             </div>
           </div>
           <div class="skill-category">
-            <h3>Backend</h3>
+            <h3>Backend & Cloud</h3>
             <div class="skill-tags">
-              <a href="https://nodejs.org/" target="_blank" class="skill-tag">Node.js</a>
-              <a href="https://laravel.com/" target="_blank" class="skill-tag">PHP (Laravel)</a>
-              <a href="https://fastapi.tiangolo.com/" target="_blank" class="skill-tag">Python (FastAPI)</a>
+              <span class="skill-tag">Node.js</span>
+              <span class="skill-tag">Python (FastAPI)</span>
+              <span class="skill-tag">AWS</span>
+              <span class="skill-tag">Terraform</span>
+              <span class="skill-tag">Docker</span>
+              <span class="skill-tag">CI/CD</span>
+              <span class="skill-tag">GitHub Actions</span>
             </div>
           </div>
           <div class="skill-category">
-            <h3>Databases</h3>
+            <h3>Security & Testing</h3>
             <div class="skill-tags">
-              <a href="https://www.postgresql.org/" target="_blank" class="skill-tag">PostgreSQL</a>
-              <a href="https://www.prisma.io/" target="_blank" class="skill-tag">Prisma ORM</a>
-              <a href="https://orm.drizzle.team/" target="_blank" class="skill-tag">Drizzle</a>
-              <a href="https://www.mongodb.com/" target="_blank" class="skill-tag">MongoDB</a>
-            </div>
-          </div>
-          <div class="skill-category">
-            <h3>DevOps & Cloud</h3>
-            <div class="skill-tags">
-              <a href="https://www.docker.com/" target="_blank" class="skill-tag">Docker</a>
-              <a href="https://kubernetes.io/" target="_blank" class="skill-tag">Kubernetes</a>
-              <a href="https://www.linux.org/" target="_blank" class="skill-tag">Linux</a>
-              <a href="https://git-scm.com/" target="_blank" class="skill-tag">Git</a>
+              <span class="skill-tag">Cypress</span>
+              <span class="skill-tag">Jest</span>
+              <span class="skill-tag">SIEM (Chronicle)</span>
+              <span class="skill-tag">Network Security</span>
+              <span class="skill-tag">Linux</span>
+              <span class="skill-tag">Git</span>
             </div>
           </div>
         </div>
@@ -221,6 +216,35 @@
             <a href="https://i4ware.fi/" target="_blank" class="hero-button">
               <span>i4ware Software</span>
               <i class="fa-solid fa-file-arrow-up"></i>
+            </a>
+          </div>
+          <div class="service-card">
+            <h3>FileConPro</h3>
+            <p>A web-based file conversion utility built for performance and accessibility. Streamlining file format management.</p>
+            <a href="https://www.fileconpro.zyx" target="_blank" class="hero-button">
+              <span>Visit FileConPro</span>
+              <i class="fa-solid fa-arrow-up-right-from-square"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div id="certifications-tab" class="tab-content">
+        <div class="grid-cards">
+          <div class="service-card">
+            <h3>Google Cybersecurity Professional</h3>
+            <p>Focus on network security, Python for security, Linux system administration, and SIEM tools.</p>
+            <a href="https://www.credly.com/badges/c960028f-766c-4e09-b649-c34d10d8ce02/public_url" target="_blank" class="hero-button">
+              <span>Verify on Credly</span>
+              <i class="fa-solid fa-certificate"></i>
+            </a>
+          </div>
+          <div class="service-card">
+            <h3>Google IT Support Specialist</h3>
+            <p>Comprehensive training in troubleshooting, networking, operating systems, and cloud infrastructure.</p>
+            <a href="https://www.credly.com/badges/aa904e39-32d7-4f49-a9b1-44cc3e5aaa46/public_url" target="_blank" class="hero-button">
+              <span>Verify on Credly</span>
+              <i class="fa-solid fa-certificate"></i>
             </a>
           </div>
         </div>
@@ -260,13 +284,11 @@
         </div>
       </div>
 
-      <form class="contact-form">
-        <input type="text" name="name" placeholder="Name" required>
-        <input type="email" name="email" placeholder="Email" required>
-        <textarea name="message" placeholder="Message" rows="5" required></textarea>
-        <button type="submit" class="button-metal">Send Message</button>
-        <p class="contact-note">This feature is not available yet. Please contact me directly by email.</p>
-      </form>
+      <div class="contact-form" style="margin-top: 25px;">
+        <p style="padding: 20px; border: 1px solid #ccc; border-radius: 8px; text-align: center;">
+          Contact form is currently under development. Please reach out to me directly via <strong>email</strong>.
+        </p>
+      </div>
     </div>
   </section>
 
