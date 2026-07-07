@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Property Budget App — Case Study | Joni Haarala</title>
+  <meta name="description" content="Case study: a rental management app built with Flutter, Node.js/Express, PostgreSQL/TimescaleDB, and AWS infrastructure provisioned with Terraform.">
+  <link rel="canonical" href="https://johadv.github.io/property-app.html">
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&amp;family=Open+Sans&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    /* Page-specific additions — everything else inherits style.css as-is */
+    .case-hero { max-width: 780px; }
+    .case-hero p.lede { font-size: 1.05rem; margin-top: 1rem; }
+
+    .stack-row { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 1.5rem; }
+    .stack-pill {
+      font-size: 0.8rem;
+      padding: 5px 13px;
+      border-radius: 999px;
+      border: 1px solid rgba(0, 123, 255, 0.3);
+      color: #007bff;
+      background: rgba(0, 123, 255, 0.06);
+    }
+    body.dark .stack-pill {
+      border-color: rgba(255, 1, 153, 0.35);
+      color: #ff0199;
+      background: rgba(255, 1, 153, 0.08);
+    }
+
+    /* Screens */
+    .screens-wrap {
+      position: relative;
+      margin: 3.5rem auto 3rem;
+      height: 560px;
+      max-width: 900px;
+    }
+    .device {
+      position: absolute;
+      border-radius: 28px;
+      background: #16203a;
+      padding: 9px;
+      box-shadow: 0 20px 50px rgba(0,0,0,0.22), 0 6px 14px rgba(0,0,0,0.12);
+    }
+    .device.phone { width: 210px; }
+    .device.phone::before {
+      content: '';
+      position: absolute;
+      top: 9px; left: 50%;
+      transform: translateX(-50%);
+      width: 60px; height: 16px;
+      background: #16203a;
+      border-radius: 0 0 10px 10px;
+      z-index: 2;
+    }
+    .device-screen { border-radius: 19px; overflow: hidden; }
+    .device-screen img { display: block; width: 100%; height: auto; }
+
+    .device.phone-1 { top: 40px; left: 0; z-index: 2; transform: rotate(-4deg); }
+    .device.phone-2 { top: 160px; left: 190px; z-index: 3; transform: rotate(2deg); }
+
+    .device.browser {
+      width: 540px;
+      top: 10px;
+      left: 400px;
+      z-index: 1;
+      transform: rotate(1deg);
+      border-radius: 12px;
+      padding: 0;
+      background: #fff;
+      border: 1px solid rgba(0,0,0,0.08);
+    }
+    body.dark .device.browser { background: #000028; border-color: rgba(255,255,255,0.12); }
+    .browser-chrome {
+      height: 30px;
+      background: #eef1f6;
+      border-bottom: 1px solid rgba(0,0,0,0.08);
+      display: flex;
+      align-items: center;
+      padding: 0 10px;
+      gap: 6px;
+      border-radius: 12px 12px 0 0;
+    }
+    body.dark .browser-chrome { background: #0d0045; border-color: rgba(255,255,255,0.1); }
+    .chrome-dot { width: 8px; height: 8px; border-radius: 50%; background: rgba(0,0,0,0.2); }
+    body.dark .chrome-dot { background: rgba(255,255,255,0.25); }
+    .browser .device-screen { border-radius: 0 0 12px 12px; }
+
+    @media (max-width: 900px) {
+      .screens-wrap { height: auto; position: static; display: flex; flex-direction: column; align-items: center; gap: 18px; }
+      .device { position: static !important; transform: none !important; }
+      .device.phone { width: 220px; }
+      .device.browser { width: 100%; max-width: 420px; }
+    }
+
+    /* Facts */
+    .facts-row {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+      margin: 2.5rem 0;
+    }
+    .fact-box {
+      border: 1px solid rgba(0,0,0,0.08);
+      border-radius: 10px;
+      padding: 16px 18px;
+    }
+    body.dark .fact-box { border-color: rgba(255,255,255,0.12); }
+    .fact-box .num { font-weight: 700; font-size: 1.6rem; color: #007bff; margin-bottom: 4px; }
+    body.dark .fact-box .num { color: #ff0199; }
+    .fact-box .lbl { font-size: 0.82rem; opacity: 0.75; line-height: 1.4; }
+
+    @media (max-width: 700px) {
+      .facts-row { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    /* Architecture diagram */
+    .arch-legend { display: flex; flex-wrap: wrap; gap: 18px; margin: 1.5rem 0; font-size: 0.82rem; opacity: 0.8; }
+    .arch-legend span.dot { display: inline-block; width: 9px; height: 9px; border-radius: 2px; margin-right: 6px; }
+
+    .arch-tier { margin: 1.6rem 0; }
+    .arch-tier-label { font-size: 0.78rem; letter-spacing: 0.08em; text-transform: uppercase; opacity: 0.55; margin-bottom: 10px; }
+
+    .arch-row { display: grid; gap: 12px; }
+    .arch-row.c3 { grid-template-columns: repeat(3, 1fr); }
+    .arch-row.c4 { grid-template-columns: repeat(4, 1fr); }
+
+    .arch-node {
+      border-radius: 10px;
+      padding: 13px 15px;
+      border: 1px solid rgba(0,0,0,0.08);
+      background: rgba(0,0,0,0.015);
+    }
+    body.dark .arch-node { border-color: rgba(255,255,255,0.1); background: rgba(255,255,255,0.02); }
+    .arch-node.client { border-color: rgba(0,123,255,0.3); background: rgba(0,123,255,0.05); }
+    .arch-node.api { border-color: rgba(15,157,104,0.3); background: rgba(15,157,104,0.05); }
+    .arch-node.data { border-color: rgba(124,58,237,0.3); background: rgba(124,58,237,0.05); }
+    .arch-node.infra { border-color: rgba(180,83,9,0.3); background: rgba(180,83,9,0.05); }
+    body.dark .arch-node.client { border-color: rgba(125,211,252,0.35); background: rgba(125,211,252,0.06); }
+    body.dark .arch-node.api { border-color: rgba(52,211,153,0.35); background: rgba(52,211,153,0.06); }
+    body.dark .arch-node.data { border-color: rgba(196,181,253,0.35); background: rgba(196,181,253,0.06); }
+    body.dark .arch-node.infra { border-color: rgba(245,158,11,0.35); background: rgba(245,158,11,0.06); }
+
+    .arch-node h4 { font-size: 0.86rem; margin: 0 0 4px; font-weight: 600; }
+    .arch-node p { font-size: 0.76rem; opacity: 0.75; margin: 0; line-height: 1.4; }
+    .arch-node .tags { margin-top: 6px; display: flex; flex-wrap: wrap; gap: 4px; }
+    .arch-node .tags span {
+      font-size: 0.68rem;
+      padding: 1px 6px;
+      border-radius: 4px;
+      background: rgba(0,0,0,0.05);
+      opacity: 0.7;
+    }
+    body.dark .arch-node .tags span { background: rgba(255,255,255,0.08); }
+
+    .arch-connector { text-align: center; font-size: 0.72rem; opacity: 0.5; padding: 6px 0; }
+
+    .arch-provision {
+      border: 1.5px dashed rgba(180,83,9,0.35);
+      border-radius: 12px;
+      padding: 16px 18px;
+      margin-top: 10px;
+    }
+
+    @media (max-width: 700px) {
+      .arch-row.c3, .arch-row.c4 { grid-template-columns: 1fr; }
+    }
+
+    .back-link { margin-top: 3rem; display: inline-block; }
+  </style>
+</head>
+<body>
+  <div class="left-sidebar">
+    <div class="profile-placeholder">
+      <i class="fas fa-user"></i>
+    </div>
+    <h1>Joni Haarala</h1>
+    <p>Cloud/DevOps Engineer<br>Full Stack Developer</p>
+    <ul class="nav-links">
+      <li><a href="index.html#home">Home</a></li>
+      <li><a href="index.html#about">About</a></li>
+      <li><a href="index.html#services">Services</a></li>
+      <li><a href="index.html#education">Education</a></li>
+      <li><a href="index.html#experience" class="active">Experience</a></li>
+      <li><a href="index.html#blog">Blog</a></li>
+      <li><a href="index.html#contact">Contact</a></li>
+    </ul>
+
+    <div class="social-links-icons">
+      <a href="https://github.com/johadv" target="_blank" class="icon-github" aria-label="GitHub"><i class="fab fa-github"></i></a>
+      <a href="https://linkedin.com/in/johadv" target="_blank" class="icon-linkedin" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+      <a href="mailto:jiihoo86@yahoo.com" class="icon-email" aria-label="Email"><i class="fas fa-envelope"></i></a>
+    </div>
+
+    <button id="toggle-theme" onclick="toggleTheme()">
+      <i class="fas fa-moon"></i>
+      <span>Dark</span>
+    </button>
+  </div>
+
+  <section class="content-section">
+    <div class="case-hero">
+      <p style="font-size:0.78rem; letter-spacing:0.1em; text-transform:uppercase; opacity:0.55; margin-bottom:0.6rem;">Case Study</p>
+      <h2>Property Budget App</h2>
+      <p class="lede">A rental management app for owners, tenants, and managers — a shared real-time view of rent, consumption, documents, and messaging. Built end to end: Flutter client, Node.js/Express API, PostgreSQL/TimescaleDB, and the AWS infrastructure behind it, provisioned with Terraform.</p>
+      <div class="stack-row">
+        <span class="stack-pill">Flutter</span>
+        <span class="stack-pill">Node.js / Express</span>
+        <span class="stack-pill">PostgreSQL + TimescaleDB</span>
+        <span class="stack-pill">AWS (ECS Fargate, RDS, ElastiCache, S3)</span>
+        <span class="stack-pill">Terraform</span>
+        <span class="stack-pill">Stripe</span>
+      </div>
+    </div>
+
+    <div class="screens-wrap">
+      <div class="device browser">
+        <div class="browser-chrome"><span class="chrome-dot"></span><span class="chrome-dot"></span><span class="chrome-dot"></span></div>
+        <div class="device-screen"><img src="assets/property-app/screen-profile.png" alt="Property details panel — web" loading="lazy"></div>
+      </div>
+      <div class="device phone phone-1">
+        <div class="device-screen"><img src="assets/property-app/screen-home.png" alt="Home screen — mobile" loading="lazy"></div>
+      </div>
+      <div class="device phone phone-2">
+        <div class="device-screen"><img src="assets/property-app/screen-pay.png" alt="Pay rent screen — mobile" loading="lazy"></div>
+      </div>
+    </div>
+
+    <div class="facts-row">
+      <div class="fact-box"><div class="num">3</div><div class="lbl">Roles per property — owner, manager, tenant — enforced identically on client &amp; API</div></div>
+      <div class="fact-box"><div class="num">65</div><div class="lbl">Backend tests (Jest + Supertest) covering auth, payments, role restrictions</div></div>
+      <div class="fact-box"><div class="num">9</div><div class="lbl">Terraform modules provisioning the full AWS stack — VPC to S3</div></div>
+      <div class="fact-box"><div class="num">2</div><div class="lbl">Languages — English &amp; Finnish — fully localized from ARB files</div></div>
+    </div>
+
+    <h3 style="margin-top:2.5rem;">System architecture</h3>
+    <p style="opacity:0.75; font-size:0.92rem; max-width:70ch;">How the Flutter client talks to the backend, where each piece of data comes to rest, and how Terraform provisions the AWS infrastructure everything above runs on.</p>
+
+    <div class="arch-legend">
+      <span><span class="dot" style="background:#007bff"></span>Client</span>
+      <span><span class="dot" style="background:#0f9d68"></span>Application / API</span>
+      <span><span class="dot" style="background:#7c3aed"></span>Data at rest</span>
+      <span><span class="dot" style="background:#b45309"></span>Provisioned by Terraform</span>
+    </div>
+
+    <div class="arch-tier">
+      <p class="arch-tier-label">Client — Flutter (Android · iOS · Web)</p>
+      <div class="arch-row c3">
+        <div class="arch-node client">
+          <h4>📱 App shell</h4>
+          <p>Screens + services calling the API over HTTPS with a JWT bearer token on every request.</p>
+          <div class="tags"><span>http</span><span>REST + JSON</span></div>
+        </div>
+        <div class="arch-node client">
+          <h4>🔐 Local auth state</h4>
+          <p>JWT in Keychain/Keystore (native) or SharedPreferences (web).</p>
+          <div class="tags"><span>secure_storage</span></div>
+        </div>
+        <div class="arch-node client">
+          <h4>💾 Offline cache</h4>
+          <p>Last-known property list cached locally so the app stays useful offline.</p>
+          <div class="tags"><span>Hive</span></div>
+        </div>
+      </div>
+    </div>
+
+    <p class="arch-connector">↓ HTTPS · REST API · Bearer JWT ↓</p>
+
+    <div class="arch-tier">
+      <p class="arch-tier-label">Application — Node.js / Express on ECS Fargate</p>
+      <div class="arch-row c4">
+        <div class="arch-node api"><h4>⚖️ Load balancer</h4><p>Terminates TLS, routes to a healthy task.</p><div class="tags"><span>ALB</span></div></div>
+        <div class="arch-node api"><h4>🧩 API containers ×2</h4><p>Stateless Express — auth, properties, payments, messaging, maintenance, admin.</p><div class="tags"><span>Fargate</span></div></div>
+        <div class="arch-node api"><h4>🔔 Background jobs</h4><p>Cron: rent reminders, overdue-rent checks, lease-end notices.</p><div class="tags"><span>node-cron</span></div></div>
+        <div class="arch-node api"><h4>🔗 Third parties</h4><p>Stripe, Firebase, OpenAI, AWS SES.</p><div class="tags"><span>webhooks</span></div></div>
+      </div>
+    </div>
+
+    <p class="arch-connector">↓ Parameterized SQL · TLS internal ↓</p>
+
+    <div class="arch-tier">
+      <p class="arch-tier-label">Data at rest — private subnets only</p>
+      <div class="arch-row c3">
+        <div class="arch-node data"><h4>🗄️ PostgreSQL + TimescaleDB</h4><p>Source of truth, plus a hypertable for meter readings.</p><div class="tags"><span>RDS</span></div></div>
+        <div class="arch-node data"><h4>⚡ Redis</h4><p>Shared rate-limit counters across both containers.</p><div class="tags"><span>ElastiCache</span></div></div>
+        <div class="arch-node data"><h4>📄 File storage</h4><p>Lease PDFs, photos, documents — encrypted at rest.</p><div class="tags"><span>S3</span></div></div>
+      </div>
+    </div>
+
+    <div class="arch-provision">
+      <p class="arch-tier-label" style="color:#b45309;">Provisioned by — Terraform (AWS, eu-north-1)</p>
+      <div class="arch-row c4">
+        <div class="arch-node infra"><h4>🌐 Network</h4><p>VPC, subnets, NAT gateway, security groups.</p></div>
+        <div class="arch-node infra"><h4>🔑 Secrets</h4><p>JWT, Stripe, OpenAI, SES, DB — Secrets Manager.</p></div>
+        <div class="arch-node infra"><h4>📦 Registry</h4><p>Backend image, tagged by git commit SHA.</p></div>
+        <div class="arch-node infra"><h4>🧾 State</h4><p>S3 + DynamoDB lock.</p></div>
+      </div>
+    </div>
+
+    <a href="https://github.com/johadv/property-app" target="_blank" class="hero-button back-link"><span>View on GitHub</span><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+    <a href="index.html#experience" class="hero-button back-link" style="margin-left:12px;"><span>Back to Experience</span><i class="fa-solid fa-arrow-left"></i></a>
+  </section>
+
+  <script src="index.js"></script>
+</body>
+</html>
