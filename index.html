@@ -24,7 +24,8 @@
     <ul class="nav-links">
       <li><a href="#home" class="scroll-link active" data-letter="H">Home</a></li>
       <li><a href="#about" class="scroll-link" data-letter="A">About</a></li>
-      <li><a href="#services" class="scroll-link" data-letter="S">Services</a></li>
+      <li><a href="#projects" class="scroll-link" data-letter="P">Projects / Apps</a></li>
+      <li><a href="#certifications" class="scroll-link" data-letter="C">Certifications</a></li>
       <li><a href="#education" class="scroll-link" data-letter="E">Education</a></li>
       <li><a href="#experience" class="scroll-link" data-letter="E">Experience</a></li>
       <li><a href="#blog" class="scroll-link" data-letter="B">Blog</a></li>
@@ -48,6 +49,7 @@
       <div id="hero-text-1" class="hero-swap active">
         <h1>Hi, I'm Joni</h1>
         <p>Cloud Security & DevOps Engineer</p>
+        <p>Graduated ICT Web Developer looking for Cloud/DevOps or Full Stack roles.</p>
         <div class="hero-cv-buttons" style="display: flex; gap: 15px; margin-top: 15px;">
           <a href="./assets/Joni_Haarala_CV_FI.pdf" download="Joni_Haarala_CV_FI.pdf" class="hero-button"><span>CV (Suomi)</span><i class="fa-solid fa-download"></i></a>
           <a href="./assets/Joni_Haarala_CV_EN.pdf" download="Joni_Haarala_CV_EN.pdf" class="hero-button"><span>CV (English)</span><i class="fa-solid fa-download"></i></a>
@@ -67,41 +69,57 @@
     <p>I have a diverse background in technical infrastructure and industrial operations, which has shaped my logical approach to problem-solving. Today, I combine that get-it-done mindset with modern software development, focusing on React, Node.js, and Cloud Security.</p>
   </section>
 
-  <section id="services" class="content-section">
-  <h2>Services</h2>
-  <div class="card-grid">
-    
-    <div class="feature-card service-card-clickable" data-service="fullstack">
-      <div class="icon"><i class="fas fa-code"></i></div>
-      <h3>Full-Stack Development</h3>
-      <p>Building scalable, end-to-end web solutions using React, Node.js, and TypeScript.</p>
+  <section id="projects" class="content-section">
+  <h2>Projects / Apps</h2>
+  <div class="grid-cards">
+
+    <div class="service-card">
+      <h3>Property Budget App</h3>
+      <p>Rental management app for owners, tenants &amp; managers — Flutter client, Node.js/Express API, PostgreSQL/TimescaleDB, full AWS infrastructure provisioned with Terraform.</p>
+      <a href="property-app.html" class="hero-button"><span>View Case Study</span><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
     </div>
 
-    <div class="feature-card service-card-clickable" data-service="uiux">
-      <div class="icon"><i class="fas fa-paint-brush"></i></div>
-      <h3>Accessible & User-Friendly UI/UX</h3>
-      <p>Creating highly interactive and responsive user interfaces.</p>
+    <div class="service-card">
+      <h3>Open Source SDK Development</h3>
+      <p>Internship project at i4ware Software. Building SDKs with PHP/Python, AI integration, and Agile processes.</p>
+      <a href="https://i4ware.fi/" target="_blank" class="hero-button"><span>i4ware Software</span><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
     </div>
 
-    <div class="feature-card service-card-clickable" data-service="backend">
-      <div class="icon"><i class="fas fa-server"></i></div>
-      <h3>Robust Backend & API Design</h3>
-      <p>Developing reliable, high-performance backends with scalable API architecture.</p>
-    </div>
-
-    <div class="feature-card service-card-clickable" data-service="consultant">
-      <div class="icon"><i class="fas fa-user-tie"></i></div>
-      <h3>Front-End Consultant</h3>
-      <p>Expert guidance for existing projects and new builds.</p>
+    <div class="service-card">
+      <h3>FileConPro</h3>
+      <p>A web-based file conversion utility built for performance and accessibility. Streamlining file format management.</p>
+      <a href="https://fileconpro.xyz/" target="_blank" class="hero-button"><span>Visit FileConPro</span><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
     </div>
 
   </div>
 </section>
 
+  <section id="certifications" class="content-section">
+    <h2>Certifications</h2>
+
+    <h3 class="cert-category">Cloud & Infrastructure</h3>
+    <div class="grid-cards">
+      <div class="service-card">
+        <h3>Google IT Support Specialist</h3>
+        <p>Comprehensive training in troubleshooting, networking, operating systems, and cloud infrastructure.</p>
+        <a href="https://www.credly.com/badges/aa904e39-32d7-4f49-a9b1-44cc3e5aaa46/public_url" target="_blank" class="hero-button"><span>Verify on Credly</span><i class="fa-solid fa-certificate"></i></a>
+      </div>
+    </div>
+
+    <h3 class="cert-category">Security</h3>
+    <div class="grid-cards">
+      <div class="service-card">
+        <h3>Google Cybersecurity Professional</h3>
+        <p>Focus on network security, Python for security, Linux system administration, and SIEM tools.</p>
+        <a href="https://www.credly.com/badges/c960028f-766c-4e09-b649-c34d10d8ce02/public_url" target="_blank" class="hero-button"><span>Verify on Credly</span><i class="fa-solid fa-certificate"></i></a>
+      </div>
+    </div>
+  </section>
+
   <section id="education" class="content-section">
     <h2>Education</h2>
     <div class="accordion">
-      <button class="accordion-toggle">Tampereen Tredu – Web Developer (ICT), 2024–2026</button>
+      <button class="accordion-toggle">Tampereen Tredu – Web Developer (ICT), Graduated: January 2026</button>
       <div class="accordion-content">
         <h3>Part-time Degree in Information and Communication Technology</h3>
         <ul>
@@ -136,7 +154,6 @@
     <div class="tab-navigation">
       <button class="tab-button active" data-tab="skills">SKILLS</button>
       <button class="tab-button" data-tab="work-experience">EXPERIENCE</button>
-      <button class="tab-button" data-tab="certifications">CERTIFICATIONS</button>
       <button class="tab-button" data-tab="code-samples">CODE</button>
     </div>
 
@@ -184,21 +201,6 @@
         </div>
       </div>
 
-      <div id="certifications-tab" class="tab-content">
-        <div class="grid-cards">
-          <div class="service-card">
-            <h3>Google Cybersecurity Professional</h3>
-            <p>Focus on network security, Python for security, Linux system administration, and SIEM tools.</p>
-            <a href="https://www.credly.com/badges/c960028f-766c-4e09-b649-c34d10d8ce02/public_url" target="_blank" class="hero-button"><span>Verify on Credly</span><i class="fa-solid fa-certificate"></i></a>
-          </div>
-          <div class="service-card">
-            <h3>Google IT Support Specialist</h3>
-            <p>Comprehensive training in troubleshooting, networking, operating systems, and cloud infrastructure.</p>
-            <a href="https://www.credly.com/badges/aa904e39-32d7-4f49-a9b1-44cc3e5aaa46/public_url" target="_blank" class="hero-button"><span>Verify on Credly</span><i class="fa-solid fa-certificate"></i></a>
-          </div>
-        </div>
-      </div>
-
       <div id="code-samples-tab" class="tab-content">
         <div class="code-samples-grid">
           <div class="code-sample-card">
@@ -234,16 +236,6 @@
 
   <div class="footer">
     <p>&copy; by Joni Haarala</p></div>
-
-    <div id="service-modal" class="modal">
-    <div class="modal-content">
-      <span class="modal-close">&times;</span>
-
-      <h2 id="modal-title"></h2>
-
-      <div id="modal-body"></div>
-    </div>
-  </div>
 
   <!-- BACK TO TOP BUTTON -->
   <button id="back-to-top" class="back-to-top">
