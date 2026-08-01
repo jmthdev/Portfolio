@@ -4,7 +4,7 @@ Personal portfolio website for presenting my background, skills, and selected wo
 
 ## Overview
 
-This project is a static portfolio site built with HTML, CSS, and JavaScript. It highlights my profile as a Full Stack Developer and includes sections for about, services, education, experience, blog, and contact information.
+This project is a static portfolio site built with HTML, CSS, and JavaScript. It highlights my profile as a Cloud/DevOps Engineer and Full Stack Developer, showcasing real projects, certifications, education, and experience.
 
 ## Live Site
 
@@ -13,19 +13,19 @@ This project is a static portfolio site built with HTML, CSS, and JavaScript. It
 ## Project Highlights
 
 - Personal portfolio homepage
-- Service and skills presentation
+- Real project case studies (Property Budget App, i4ware SDK, FileConPro)
+- Certifications grouped by category (Cloud & Infrastructure, Security)
 - Education and experience sections
 - Contact section for reaching out
-- Additional project examples included in the repository
 
 ## Main Sections
 
 - Home
 - About
-- Services
+- Projects / Apps
+- Certifications
 - Education
 - Experience
-- Blog
 - Contact
 
 ## Tech Stack
